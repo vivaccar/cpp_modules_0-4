@@ -6,15 +6,15 @@ NAME = megaphone
 
 CC = c++
 
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CPP_FLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CPP_FLAGS) $(OBJS) -o $(NAME)
 
-$(OBJS): $(SRCS)	
-	$(CC) $(CFLAGS) -c $< -o $@
+$(OBJS): %.o: %.cpp	
+	$(CC) $(CPP_FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
