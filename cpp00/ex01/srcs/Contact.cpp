@@ -26,7 +26,7 @@ void Contact::set_first_name()
 			std::exit(0);
 		}
 		if (user_input.empty())
-			std::cout << "Please enter a valid First Name." << std::endl;
+			std::cout << "\033[31m" << "Please enter a valid First Name." << "\033[0m" << std::endl;
 		this->first_name = user_input;
 	}
 }
@@ -45,7 +45,7 @@ void Contact::set_last_name()
 			std::exit(0);
 		}
 		if (user_input.empty())
-			std::cout << "Please enter a valid Last Name." << std::endl;
+			std::cout << "\033[31m" << "Please enter a valid Last Name." << "\033[0m" << std::endl;
 		this->last_name = user_input;
 	}
 }
@@ -64,7 +64,7 @@ void Contact::set_nickname()
 			std::exit(0);
 		}
 		if (user_input.empty())
-			std::cout << "Please enter a valid Nickname." << std::endl;
+			std::cout << "\033[31m" << "Please enter a valid Nickname." << "\033[0m" << std::endl;
 		this->nickname = user_input;
 	}
 }
@@ -83,7 +83,7 @@ void Contact::set_darkest_secret()
 			std::exit(0);
 		}
 		if (user_input.empty())
-			std::cout << "Please enter a valid Darkset Secret." << std::endl;
+			std::cout << "\033[31m" << "Please enter a valid Darkest Secret." << "\033[0m" << std::endl;
 		this->darkest_secret = user_input;
 	}
 }
@@ -102,7 +102,7 @@ void Contact::set_number()
 			std::exit(0);
 		}
 		if (user_input.empty())
-			std::cout << "Please enter a valid Phone number." << std::endl;
+			std::cout << "\033[31m" << "Please enter a valid phone number." << "\033[0m" << std::endl;
 		this->number = user_input;
 	}
 }

@@ -20,7 +20,8 @@ int	main(void)
 
 	while (!std::cin.eof())
 	{
-		std::cout << "Enter one of These Commands:\n\n1. ADD\n2. SEARCH\n3. EXIT\n\n";
+		user_input = "";
+		std::cout << "Enter one of These Commands:\n\n1. ADD\n2. SEARCH\n3. EXIT" << std::endl << std::endl;
 		std::getline(std::cin, user_input);
 		if (std::cin.eof())
 		{
