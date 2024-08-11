@@ -18,14 +18,14 @@ int	main(void)
 	PhoneBook	phonebook;
 	std::string	user_input;
 
-	while (1)
+	while (!std::cin.eof())
 	{
 		std::cout << "Enter one of These Commands:\n\n1. ADD\n2. SEARCH\n3. EXIT\n\n";
 		std::getline(std::cin, user_input);
 		if (std::cin.eof())
 		{
 			std::cout << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
-			exit(0);
+			std::exit(0);
 		}
 		if (!handle_input(user_input, &phonebook))
 			break ;

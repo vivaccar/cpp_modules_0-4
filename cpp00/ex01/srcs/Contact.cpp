@@ -9,10 +9,8 @@ Contact::Contact()
 	this->number = "";
 }
 
-Contact::~Contact()
-{
+Contact::~Contact(){}
 
-}
 
 void Contact::set_first_name()
 {
@@ -24,7 +22,7 @@ void Contact::set_first_name()
 		std::getline(std::cin, user_input);
 		if (std::cin.eof())
 		{
-			std::cout << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
+			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
 		if (user_input.empty())
@@ -43,7 +41,7 @@ void Contact::set_last_name()
 		std::getline(std::cin, user_input);
 		if (std::cin.eof())
 		{
-			std::cout << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
+			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
 		if (user_input.empty())
@@ -62,7 +60,7 @@ void Contact::set_nickname()
 		std::getline(std::cin, user_input);
 		if (std::cin.eof())
 		{
-			std::cout << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
+			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
 		if (user_input.empty())
@@ -81,7 +79,7 @@ void Contact::set_darkest_secret()
 		std::getline(std::cin, user_input);
 		if (std::cin.eof())
 		{
-			std::cout << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
+			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
 		if (user_input.empty())
@@ -100,7 +98,7 @@ void Contact::set_number()
 		std::getline(std::cin, user_input);
 		if (std::cin.eof())
 		{
-			std::cout << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
+			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
 		if (user_input.empty())

@@ -13,6 +13,8 @@ class PhoneBook {
 		~PhoneBook(void);
 		void add();
 		void search();
+		void print_all_contacts();
+		std::string truncate(std::string str);
 };
 
 #endif
