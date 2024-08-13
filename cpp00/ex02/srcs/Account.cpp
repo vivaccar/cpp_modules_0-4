@@ -10,10 +10,9 @@ int	Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit)
 {
-	(void) initial_deposit;
-	
 	this->_accountIndex = _nbAccounts;
 	this->_amount = initial_deposit;
+	_totalAmount += this->_amount;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
 	_displayTimestamp();
@@ -26,7 +25,10 @@ Account::~Account () {}
 
 void Account::displayAccountsInfos( void )
 {
-	
+	_displayTimestamp();
+	std::cout << "accounts:" << _nbAccounts <<
+	";total:" << _totalAmount << ";deposits:" <<
+	_totalNbDeposits << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
 void Account::_displayTimestamp( void )
