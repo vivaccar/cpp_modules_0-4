@@ -6,7 +6,7 @@ NAME = megaphone
 
 CC = c++
 
-CPP_FLAGS = -g -Wall -Wextra -Werror -std=c++98
+CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 

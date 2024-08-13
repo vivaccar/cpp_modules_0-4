@@ -4,7 +4,7 @@ PhoneBook::PhoneBook(void)
 {
 	this->oldest_contact = 0;
 	this->saved_contacts = 0;
-	std::cout << "\033[34m" << "     Welcome to the Amazing PhoneBook!     " << "\033[0m" << std::endl;
+	std::cout << "\033[34m" << "     WELCOME TO THE AMAZING PHONEBOOK     " << "\033[0m" << std::endl;
 	std::cout << "-------------------------------------------\n" << std::endl;
 }
 
@@ -17,8 +17,8 @@ void PhoneBook::add()
 {
 	if (saved_contacts < 8)
 	{
-		std::cout << "\n-------------------------------------------\n";
-		std::cout << "            Adding a new contact           \n" << std::endl;
+		std::cout << "\n-------------------------------------------" << "\033[0m" << std::endl;
+		std::cout << "\033[34m" << "            ADDING A NEW CONTACT           \n" << "\033[0m" << std::endl;
 		contacts[saved_contacts].set_first_name();
 		contacts[saved_contacts].set_last_name();
 		contacts[saved_contacts].set_nickname();

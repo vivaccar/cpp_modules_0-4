@@ -1,8 +1,8 @@
-SRCS = srcs/main.cpp srcs/PhoneBook.cpp srcs/Contact.cpp
+SRCS = srcs/tests.cpp srcs/Account.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = phonebook
+NAME = tester
 
 CC = c++
 
