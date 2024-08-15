@@ -15,8 +15,11 @@ class PhoneBook {
 		void add();
 		void search();
 		void print_all_contacts();
-		std::string truncate(std::string str);
 		void print_index();
 };
+
+bool		has_digit(std::string str);
+bool 		has_letter(std::string str);
+std::string truncate(std::string str);
 
 #endif

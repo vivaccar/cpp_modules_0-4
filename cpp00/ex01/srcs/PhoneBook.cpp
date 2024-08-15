@@ -1,4 +1,4 @@
-#include "PhoneBook.hpp"
+#include "../includes/PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -42,13 +42,6 @@ void PhoneBook::add()
 		oldest_contact += 1;
 	else
 		oldest_contact = 0;
-}
-
-std::string PhoneBook::truncate(std::string str)
-{
-	if (str.length() > 10)
-		return (str.substr(0, 9) + ".");
-	return (str);
 }
 
 void PhoneBook::print_all_contacts()

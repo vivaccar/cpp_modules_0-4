@@ -1,4 +1,4 @@
-#include "PhoneBook.hpp"
+#include "../includes/PhoneBook.hpp"
 
 Contact::Contact()
 {
@@ -16,7 +16,7 @@ void Contact::set_first_name()
 {
 	std::string user_input = "";
 
-	while (user_input.empty())
+	while (1)
 	{
 		std::cout << "First name: ";
 		std::getline(std::cin, user_input);
@@ -25,9 +25,12 @@ void Contact::set_first_name()
 			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
-		if (user_input.empty())
-			std::cout << "\033[31m" << "Please enter a valid First Name." << "\033[0m" << std::endl;
-		this->first_name = user_input;
+		if (!user_input.empty() && !has_digit(user_input))
+		{
+			this->first_name = user_input;
+			break;
+		}
+		std::cout << "\033[31m" << "Please enter a valid First Name." << "\033[0m" << std::endl;
 	}
 }
 
@@ -35,7 +38,7 @@ void Contact::set_last_name()
 {
 	std::string user_input = "";
 
-	while (user_input.empty())
+	while (1)
 	{
 		std::cout << "Last name: ";
 		std::getline(std::cin, user_input);
@@ -44,9 +47,12 @@ void Contact::set_last_name()
 			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
-		if (user_input.empty())
-			std::cout << "\033[31m" << "Please enter a valid Last Name." << "\033[0m" << std::endl;
-		this->last_name = user_input;
+		if (!user_input.empty() && !has_digit(user_input))
+		{
+			this->last_name = user_input;
+			break;
+		}
+		std::cout << "\033[31m" << "Please enter a valid Last Name." << "\033[0m" << std::endl;
 	}
 }
 
@@ -54,7 +60,7 @@ void Contact::set_nickname()
 {
 	std::string user_input = "";
 
-	while (user_input.empty())
+	while (1)
 	{
 		std::cout << "Nickname: ";
 		std::getline(std::cin, user_input);
@@ -63,9 +69,12 @@ void Contact::set_nickname()
 			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
-		if (user_input.empty())
-			std::cout << "\033[31m" << "Please enter a valid Nickname." << "\033[0m" << std::endl;
-		this->nickname = user_input;
+		if (!user_input.empty())
+		{
+			this->nickname = user_input;
+			break ;
+		}
+		std::cout << "\033[31m" << "Please enter a valid Nickname." << "\033[0m" << std::endl;
 	}
 }
 
@@ -73,7 +82,7 @@ void Contact::set_darkest_secret()
 {
 	std::string user_input = "";
 
-	while (user_input.empty())
+	while (1)
 	{
 		std::cout << "Darkest Secret: ";
 		std::getline(std::cin, user_input);
@@ -82,9 +91,12 @@ void Contact::set_darkest_secret()
 			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
-		if (user_input.empty())
-			std::cout << "\033[31m" << "Please enter a valid Darkest Secret." << "\033[0m" << std::endl;
-		this->darkest_secret = user_input;
+		if (!user_input.empty())
+		{
+			this->darkest_secret = user_input;
+			break;
+		}
+		std::cout << "\033[31m" << "Please enter a valid Darkest Secret." << "\033[0m" << std::endl;
 	}
 }
 
@@ -92,7 +104,7 @@ void Contact::set_number()
 {
 	std::string user_input = "\0";
 
-	while (user_input.empty())
+	while (1)
 	{
 		std::cout << "Phone number: ";
 		std::getline(std::cin, user_input);
@@ -101,9 +113,12 @@ void Contact::set_number()
 			std::cout << std::endl << "CTRL-D Pressed. Exiting Phonebook!" << std::endl;
 			std::exit(0);
 		}
-		if (user_input.empty())
-			std::cout << "\033[31m" << "Please enter a valid phone number." << "\033[0m" << std::endl;
-		this->number = user_input;
+		if (!user_input.empty() && !has_letter(user_input))
+		{
+			this->number = user_input;
+			break;
+		}
+		std::cout << "\033[31m" << "Please enter a valid phone number." << "\033[0m" << std::endl;
 	}
 }
 
