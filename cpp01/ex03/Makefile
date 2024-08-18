@@ -1,8 +1,8 @@
-SRCS = srcs/newZombie.cpp srcs/ramdomChump.cpp srcs/Zombie.cpp srcs/main.cpp
+SRCS = srcs/main.cpp srcs/Weapon.cpp srcs/HumanA.cpp srcs/HumanB.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = ex00
+NAME = ex03
 
 CC = c++
 
