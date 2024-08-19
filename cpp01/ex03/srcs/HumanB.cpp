@@ -1,11 +1,13 @@
 #include "../includes/HumanB.hpp"
 
 HumanB::HumanB(std::string name) : name(name), weapon(NULL) {
-	std::cout << this->name << " created withot any weapon " << std::endl;
+	std::cout << BLUE << this->name << " created withot any weapon "
+	<< RESET << std::endl;
 }
 
 HumanB::~HumanB() {
-	std::cout << this->name << " (HumanB) destroyed!" << std::endl;
+	std::cout << RED << this->name
+	<< " (HumanB) destroyed!" << RESET << std::endl;
 }
 
 void HumanB::attack() {

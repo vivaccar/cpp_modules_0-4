@@ -9,7 +9,7 @@ bool handle_input(std::string user_input, PhoneBook *phonebook)
 	else if (user_input == "EXIT" || user_input == "3")
 		return false;
 	else
-		std::cout << "Invalid command: Try again\n\n";
+		std::cout << "\033[31m" << "Invalid command: Try again\n\n" << "\033[0m";
 	return true;
 }
 

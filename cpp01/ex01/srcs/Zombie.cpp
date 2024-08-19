@@ -1,15 +1,21 @@
 #include "../includes/Zombie.hpp"
 
-Zombie::Zombie() {}
+Zombie::Zombie() {
+	std::cout << BLUE << "ZOMBIE" << this->name
+	<< " CREATED!" << RESET <<std::endl;
+}
 
 Zombie::Zombie(std::string name)
 {
 	this->name = name;
+	std::cout << BLUE << "ZOMBIE \"" << this->name
+	<< "\" CREATED!" << RESET <<std::endl;
 }
 
 Zombie::~Zombie()
 {
-	std::cout << this->name << " was destroyed." << std::endl;
+	std::cout << RED << this->name << " was destroyed."
+	<< RESET << std::endl;
 }
 
 void	Zombie::announce()
