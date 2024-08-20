@@ -43,13 +43,13 @@ int	main(int ac, char **av)
 	input_file.open(input_file_name);
 	if (!input_file.is_open())
 	{
-		std::cout << "Error when trying to open Input file.";
+		std::cout << "Error when trying to open Input file." << std::endl;
 		return (EXIT_FAILURE);
 	}
 	output_file.open(output_file_name);
 	if (!output_file.is_open())
 	{
-		std::cout << "Error when trying to open Output file.";
+		std::cout << "Error when trying to open Output file." << std::endl;
 		return (EXIT_FAILURE);
 	}
 	replace(output_file, input_file, av);
