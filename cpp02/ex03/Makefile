@@ -1,8 +1,8 @@
-SRCS = srcs/main.cpp srcs/Fixed.cpp
+SRCS = srcs/main.cpp srcs/Point.cpp srcs/bsp.cpp srcs/Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = ex02
+NAME = ex03
 
 CC = c++
 
@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CPP_FLAGS) $(OBJS) -o $(NAME)
 
-$(OBJS): %.o: %.cpp
+$(OBJS): %.o: %.cpp	
 	$(CC) $(CPP_FLAGS) -c $< -o $@
 
 clean:
