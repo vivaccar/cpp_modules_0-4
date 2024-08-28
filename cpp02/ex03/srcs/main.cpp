@@ -2,11 +2,10 @@
 
 int main(void)
 {
-    Point p1(2.25f, 1.5f);
+    Point p1(0, 0);
+    Point p2(5, 0);
+    Point p3(0, 5);
+    Point p(0, 0);
 
-    Point p2(1.2f, 2.2f);
-
-    p1 = p2;
-    std::cout << p1.getX() << " " << p1.getY() << std::endl;
-    
+    bsp(p1, p2, p3, p);
 }

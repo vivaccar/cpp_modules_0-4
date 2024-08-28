@@ -102,7 +102,7 @@ Fixed Fixed::operator*(const Fixed &other) const {
 Fixed Fixed::operator/(const Fixed &other) const {
     Fixed division;
 
-    division.setRawBits(this->getRawBits() / other.getRawBits());
+    division.setRawBits((this->getRawBits() << Fixed::f_bits) / other.getRawBits());
     return (division);
 }
 

@@ -27,7 +27,7 @@ int main(void)
     std ::cout << std::endl << std::endl;
 
     {
-        Fixed a(2.4f);
+        Fixed a(10.4f);
         Fixed b(1.3f);
 
         Fixed c = a + b;
