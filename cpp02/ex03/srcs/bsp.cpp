@@ -23,7 +23,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 
     if (a == point || b == point || c == point)
     {
-        std::cout << "The point is under one of the vertices" << std::endl;
+        std::cout << "The point is under one of the vertices!" << std::endl;
         return false;
     }
     if (t1 == 0 || t2 == 0 || t3 == 0)

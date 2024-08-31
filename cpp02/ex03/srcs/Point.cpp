@@ -10,8 +10,8 @@ Point::~Point() {}
 
 Point& Point::operator=(const Point& other) {
     
-    // to develop
-    (void) other;
+    (Fixed)this->x = other.x;
+    (Fixed)this->y = other.y;
     return (*this);
 }
 

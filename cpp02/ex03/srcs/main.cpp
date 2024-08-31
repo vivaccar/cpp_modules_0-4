@@ -21,4 +21,15 @@ int main(void)
 
         bsp(p1, p2, p3, p);
     }
+
+    std::cout << std::endl;
+
+    {
+        Point p1(1, 1);
+        Point p2(1.2, 3);
+        Point p3(4, 5);
+        Point p(1, 1);
+
+        bsp(p1, p2, p3, p);
+    }
 }
