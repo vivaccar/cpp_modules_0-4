@@ -1,4 +1,4 @@
-SRCS = srcs/main.cpp srcs/Fixed.cpp
+SRCS = srcs/main.cpp srcs/ClapTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
