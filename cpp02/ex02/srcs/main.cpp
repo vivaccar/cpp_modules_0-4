@@ -3,7 +3,7 @@
 int main(void)
 {
     {
-        Fixed a(2.42f);
+        Fixed a(2.50f);
         Fixed b(2.43f);
 
         std::cout << a.getRawBits() << std::endl;
@@ -27,8 +27,8 @@ int main(void)
     std ::cout << std::endl << std::endl;
 
     {
-        Fixed a(10.4f);
-        Fixed b(1.3f);
+        Fixed a(10);
+        Fixed b(2.25f);
 
         Fixed c = a + b;
         std::cout << "Sum: " << c << std::endl;  
@@ -50,15 +50,15 @@ int main(void)
         Fixed a(10);
         Fixed b(9.75f);
 
-        std::cout << "Bigger: " <<Fixed::max(a, b) << std::endl;
-        std::cout << "Lower: " <<Fixed::min(a, b) << std::endl;
+        std::cout << "Bigger: " << Fixed::max(a, b) << std::endl;
+        std::cout << "Lower: " << Fixed::min(a, b) << std::endl;
     }
 
     std::cout << std::endl;
 
 
     {
-        Fixed a;
+        Fixed a(1);
         Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
         std::cout << a << std::endl;
         std::cout << ++a << std::endl;

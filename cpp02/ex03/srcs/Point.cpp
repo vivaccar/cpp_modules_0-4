@@ -22,3 +22,7 @@ Fixed Point::getX() const {
 Fixed Point::getY() const {
     return this->y;
 }
+
+bool Point::operator==(const Point& other) const {
+    return (other.getX() == this->getX() && other.getY() == this->getY());
+}

@@ -18,8 +18,10 @@ class Point {
 
         // = operator overload
         Point& operator=(const Point& other);
+        
         Fixed getX() const;
         Fixed getY() const;
+        bool operator==(const Point& other) const;
 };
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);
