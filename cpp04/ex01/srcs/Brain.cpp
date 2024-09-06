@@ -9,7 +9,7 @@ Brain::Brain(const Brain& other) {
 }
 
 Brain::~Brain() {
-    std::cout << RED << "Brain Default constructor called" << RESET << std::endl;
+    std::cout << RED << "Brain destructor called" << RESET << std::endl;
 }
 
 Brain& Brain::operator=(const Brain& other) {

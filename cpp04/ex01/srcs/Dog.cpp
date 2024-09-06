@@ -2,6 +2,7 @@
 
 Dog::Dog() {
     std::cout << GREEN << "[DOG] default constructor called" << RESET << std::endl;
+    this->brain = new Brain;
     this->_type = "Dog";
 }
 
@@ -11,6 +12,7 @@ Dog::Dog(const Dog& other) {
 
 Dog::~Dog() {
     std::cout << RED << "[DOG] destructor called" << RESET << std::endl;
+    delete this->brain;
 }
 
 Dog& Dog::operator=(const Dog& other) {
