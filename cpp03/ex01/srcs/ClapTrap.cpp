@@ -20,10 +20,10 @@ ClapTrap::ClapTrap(const ClapTrap& other) {
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
-    this->_name = other.getName();
-    this->_hit = other.getHit();
-    this->_attackDamage = other.getAttackDamage();
-    this->_energy = other.getEnergy();
+    this->_name = other._name;
+    this->_hit = other._hit;
+    this->_attackDamage = other._attackDamage;
+    this->_energy = other._energy;
     return (*this);
 }
 

@@ -9,7 +9,7 @@ ScavTrap::ScavTrap() {
 }
 
 ScavTrap::ScavTrap(std::string name) {
-    this->setName(name);
+    this->_name = name;
     this->_hit = 100;
     this->_energy = 50;
     this->_attackDamage = 20;
@@ -27,10 +27,10 @@ ScavTrap::ScavTrap(const ScavTrap& other) {
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
-    this->_name = other.getName();
-    this->_hit = other.getHit();
-    this->_energy = other.getEnergy();
-    this->_attackDamage = other.getAttackDamage();
+    this->_name = other._name;
+    this->_hit = other._hit;
+    this->_energy = other._energy;
+    this->_attackDamage = other._attackDamage;
     return (*this);
 }
 
