@@ -7,6 +7,7 @@ Dog::Dog() {
 
 Dog::Dog(const Dog& other) {
     *this = other;
+    std::cout << GREEN << "[DOG] copy constructor called" << RESET << std::endl;
 }
 
 Dog::~Dog() {

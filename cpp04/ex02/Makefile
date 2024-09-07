@@ -2,7 +2,7 @@ SRCS = srcs/main.cpp srcs/Animal.cpp srcs/Dog.cpp srcs/Cat.cpp srcs/Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = ex01
+NAME = ex02
 
 CC = c++
 

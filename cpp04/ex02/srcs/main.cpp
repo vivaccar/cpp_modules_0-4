@@ -3,6 +3,9 @@
 
 int main (void) 
 {
+    // Animal *animal = new Animal;
+    // Animal animal2;
+    
     {
         std::cout << ":::::::: SUBJECT TEST ::::::::" << std::endl;
         

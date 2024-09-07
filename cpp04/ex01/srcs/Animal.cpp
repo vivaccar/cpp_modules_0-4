@@ -6,6 +6,7 @@ Animal::Animal() : _type("") {
 
 Animal::Animal(const Animal& other) {
     *this = other;
+    std::cout << GREEN << "[Animal] copy constructor called" << RESET << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& other) {
@@ -28,3 +29,8 @@ std::string Animal::getType() const {
 void Animal::setType(std::string type) {
     this->_type = type;
 }
+
+Brain* Animal::getBrain() const {
+    return this->brain;
+}
+

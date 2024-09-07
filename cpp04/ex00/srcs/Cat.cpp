@@ -7,6 +7,7 @@ Cat::Cat() {
 
 Cat::Cat(const Cat& other) {
     *this = other;
+    std::cout << GREEN << "[CAT] copy constructor called" << RESET << std::endl;
 }
 
 Cat::~Cat() {

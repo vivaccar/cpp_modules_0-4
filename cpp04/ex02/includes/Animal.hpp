@@ -7,9 +7,7 @@
 #include "Brain.hpp"
 
 class Animal {
-    private:
-        Brain *brain;
-
+    
     protected:
         std::string _type;
 
@@ -20,7 +18,7 @@ class Animal {
 
         virtual Animal& operator=(const Animal& other);
 
-        virtual Brain* getBrain() const;
+        virtual Brain* getBrain() const = 0;
         virtual void makeSound() const;
         std::string getType() const;
         void setType(std::string type);
