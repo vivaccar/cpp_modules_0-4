@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include <ICharacter.hpp>
+#include "ICharacter.hpp"
+#include <stdlib.h>
 
 #define RED "\033[31m"
 #define GREEN "\033[32m"
