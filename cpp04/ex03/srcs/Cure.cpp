@@ -1,7 +1,7 @@
 #include "../includes/Cure.hpp"
 
 Cure::Cure() {
-    this->_type = "ice";
+    this->_type = "cure";
     std::cout << GREEN << "[Cure] default constructor called" << RESET << std::endl;
 }
 
@@ -11,7 +11,7 @@ Cure::Cure(const Cure& other) {
 }
 
 Cure::~Cure() {
-    std::cout << GREEN << "[Cure] destructor called" << RESET << std::endl;
+    std::cout << RED << "[Cure] destructor called" << RESET << std::endl;
 }
 
 Cure& Cure::operator=(const Cure& other) {

@@ -10,16 +10,18 @@
 #define GREEN "\033[32m"
 #define RESET "\033[0m"
 
+class ICharacter;
+
 class AMateria {
     protected:
         std::string _type;
-    
+
     public:
 
         AMateria();
         AMateria(std::string const& type);
         AMateria(const AMateria& other);
-        ~AMateria();
+        virtual ~AMateria();
 
         AMateria& operator=(const AMateria& other);
 

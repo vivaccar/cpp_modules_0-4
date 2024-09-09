@@ -11,7 +11,7 @@ Ice::Ice(const Ice& other) {
 }
 
 Ice::~Ice() {
-    std::cout << GREEN << "[Ice] destructor called" << RESET << std::endl;
+    std::cout << RED << "[Ice] destructor called" << RESET << std::endl;
 }
 
 Ice& Ice::operator=(const Ice& other) {

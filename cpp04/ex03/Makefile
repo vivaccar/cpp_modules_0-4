@@ -1,4 +1,4 @@
-SRCS = srcs/main.cpp srcs/Ice.cpp srcs/Cure.cpp srcs/Character.cpp srcs/AMateria.cpp
+SRCS = srcs/main.cpp srcs/Ice.cpp srcs/Cure.cpp srcs/Character.cpp srcs/AMateria.cpp srcs/MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -6,7 +6,7 @@ NAME = ex03
 
 CC = c++
 
-CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
+CPP_FLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
