@@ -10,11 +10,11 @@
 #define GREEN "\033[32m"
 #define RESET "\033[0m"
 
-class ICharacter;
 
 class AMateria {
     protected:
         std::string _type;
+        bool        _isEquiped;
 
     public:
 
@@ -29,7 +29,8 @@ class AMateria {
 
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
-
+        bool isEquiped() const;
+        void setEquiped(bool status);
 };
 
 #endif

@@ -2,6 +2,7 @@
 #include "../includes/Cure.hpp"
 #include "../includes/Character.hpp"
 #include "../includes/MateriaSource.hpp"
+#include "../includes/UnequipedMateria.hpp"
 
 
 int test_subj()
@@ -33,46 +34,80 @@ void test_player()
     std::cout << RED <<  "EQUIP()" << std::endl;
     ICharacter *p1 = new Character("Vinicius");
     ICharacter *p2 = new Character("Vivaccar");
-    AMateria *m1 = new Cure();
-    AMateria *m2 = new Ice();
+    AMateria *ices[4];
+    AMateria *cures[4];
 
     std::cout << std::endl;
 
-    p1->equip(m1);
-    p1->equip(m1);
-    p1->equip(m2);
-    p1->equip(m2);
-    p1->equip(m1);
-    p1->equip(m1);
-    p1->equip(m1);
-    p2->equip(m2);
-    p2->equip(m1);
+    for (int i = 0; i < 4; i++)
+    {
+        ices[i] = new Ice();
+        cures[i] = new Cure();
+    }
+    std::cout << std::endl;
+
+    p1->equip(cures[0]);
+    p1->equip(ices[1]);
+    p1->equip(ices[2]);
+
 
     std::cout << std::endl << RED <<  "USE()" << std::endl;
 
     p1->use(-1, *p2);
     p1->use(3, *p2);
-    p2->use(1, *p2);
-    p2->use(4, *p2);
+    p2->use(1, *p1);
+    p2->use(4, *p1);
+    p2->use(0, *p1);
 
     //UNEQUIP()
+    std::cout << std::endl << RED <<  "UNEQUIP()" << RESET << std::endl;
+    p1->unequip(0);
+    p1->use(1, *p2);
+    p1->unequip(1);
+    p2->unequip(4);
+    p2->unequip(1);
+    
+    std::string type = "ice";
+    p1->getUnequipedMateria(type);
 
-    //COPY TESTS()
+    p2->equip(ices[1]);
+
+
+    for (int i = 0; i < 4; i++)
+    {
+        if (!ices[i]->isEquiped())
+            delete ices[i];
+        if (!cures[i]->isEquiped())
+            delete cures[i];
+    }
+    delete p1;
+    delete p2;
+
+/*     //COPY TESTS()
     std::cout << std::endl << RED <<  "COPYCONSTRUCTOR() AND COPY ASSIGNMENT ==" << std::endl;
 
     Character *c1 = new Character("chico");
     Character *c2 = new Character("joao");
     Character *c3 = new Character(*c1);
+    AMateria *materia = new Ice();
+    std::cout << std::endl;
 
+    c1->equip(materia);
     *c2 = *c1;
 
-    std::cout << c3->getName() << c2->getName() << c1->getName() << std::endl;
+    std::cout << "c1 Name: " << c1->getName() << std::endl;
+    std::cout << "c2 Name: " << c2->getName() << std::endl;
+    std::cout << "c3 Name: " << c3->getName() << std::endl;
+
+    c1->use(2, *c2);
+    c2->use(2, *c2);
+    c2->use(2, *c2);
 
     std::cout << std::endl;
-    delete p1;
-    delete p2;
-    delete m1;
-    delete m2;
+    delete c1;
+    delete c2;
+    delete c3; */
+
 }
 
 void test_materia()
@@ -87,7 +122,7 @@ void test_materia()
 
     std::cout << std::endl;
     
-    std::cout << RED <<  "LEARNMATERIA()" << std::endl;
+    std::cout << RED <<  "LEARNMATERIA()" << std::endl; 
     src->learnMateria(m1);
     src->learnMateria(m2);
     std::cout<< std::endl << RED <<  "CREATEMATERIA()" << std::endl;
@@ -112,9 +147,8 @@ void test_materia()
 int main(void)
 {
     //test_subj();
-    std::cout << std::endl;
+    //std::cout << std::endl;
     test_player();
     //test_materia();
-
-    std::cout << std::endl;
+    //std::cout << std::endl;
 }

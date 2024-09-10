@@ -1,4 +1,4 @@
-SRCS = srcs/main.cpp srcs/Ice.cpp srcs/Cure.cpp srcs/Character.cpp srcs/AMateria.cpp srcs/MateriaSource.cpp
+SRCS = srcs/main.cpp srcs/Ice.cpp srcs/Cure.cpp srcs/Character.cpp srcs/AMateria.cpp srcs/MateriaSource.cpp srcs/UnequipedMateria.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
