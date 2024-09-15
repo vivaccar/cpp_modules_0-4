@@ -1,13 +1,13 @@
 #include "../includes/AMateria.hpp"
 
 AMateria::AMateria() {
-    this->_isEquiped = false;
+    this->_status = CREATED;
     //std::cout << GREEN << "AMateria default constructor called" << RESET << std::endl;
 }
 
 AMateria::AMateria(std::string const& type) {
     this->_type = type;
-    this->_isEquiped = false;
+    this->_status = CREATED;
     //std::cout << GREEN << "AMateria parameterized constructor called" << RESET << std::endl;
 }
 
@@ -32,10 +32,10 @@ void AMateria::use(ICharacter& target) {
     std::cout << "AMateria 'use()' can't do anything to " << target.getName() << std::endl;
 }
 
-bool AMateria::isEquiped() const {
-    return this->_isEquiped;
+int AMateria::getStatus() const {
+    return this->_status;
 }
 
-void AMateria::setEquiped(bool status) {
-    this->_isEquiped = status;
+void AMateria::setStatus(int status) {
+    this->_status = status;
 }

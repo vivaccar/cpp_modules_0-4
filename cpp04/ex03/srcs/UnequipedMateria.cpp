@@ -17,6 +17,15 @@ UnequipedMateria::~UnequipedMateria() {
     }
 }
 
+UnequipedMateria::UnequipedMateria(const UnequipedMateria& other) {
+    *this = other;
+}
+
+UnequipedMateria& UnequipedMateria::operator==(const UnequipedMateria& other) {
+    *this = other;
+    return (*this);
+}
+
 UnequipedMateria& UnequipedMateria::getInstance() {
     static UnequipedMateria instance;
     return instance; 
@@ -24,18 +33,19 @@ UnequipedMateria& UnequipedMateria::getInstance() {
 
 void UnequipedMateria::addMateria(AMateria* m) {
     t_UnequipedNodes *new_node = new t_UnequipedNodes;
+    m->setStatus(UNEQUIPED);
     new_node->materia = m;
     new_node->next = unequipedNodes;
     unequipedNodes = new_node;
 };
 
-AMateria* UnequipedMateria::getMateria(std::string& type) {
+AMateria* UnequipedMateria::getMateria(AMateria *target) {
     t_UnequipedNodes *tmp = this->unequipedNodes;
     t_UnequipedNodes *prev = NULL;
 
     while (tmp)
     {
-        if (tmp->materia->getType() == type)
+        if (tmp->materia == target)
         {
             AMateria* materia = tmp->materia;
             if (prev == NULL)

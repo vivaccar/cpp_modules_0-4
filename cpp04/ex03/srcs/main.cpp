@@ -62,28 +62,28 @@ void test_player()
     //UNEQUIP()
     std::cout << std::endl << RED <<  "UNEQUIP()" << RESET << std::endl;
     p1->unequip(0);
-    p1->use(1, *p2);
+    p1->use(0, *p2);
     p1->unequip(1);
     p2->unequip(4);
     p2->unequip(1);
     
     std::string type = "ice";
-    p1->getUnequipedMateria(type);
+    p1->equip(cures[0]);
 
     p2->equip(ices[1]);
 
 
     for (int i = 0; i < 4; i++)
     {
-        if (!ices[i]->isEquiped())
+        if (ices[i]->getStatus() == CREATED)
             delete ices[i];
-        if (!cures[i]->isEquiped())
+        if (cures[i]->getStatus() == CREATED)
             delete cures[i];
     }
     delete p1;
     delete p2;
 
-/*     //COPY TESTS()
+    //COPY TESTS()
     std::cout << std::endl << RED <<  "COPYCONSTRUCTOR() AND COPY ASSIGNMENT ==" << std::endl;
 
     Character *c1 = new Character("chico");
@@ -99,14 +99,14 @@ void test_player()
     std::cout << "c2 Name: " << c2->getName() << std::endl;
     std::cout << "c3 Name: " << c3->getName() << std::endl;
 
-    c1->use(2, *c2);
-    c2->use(2, *c2);
-    c2->use(2, *c2);
+    c1->use(0, *c2);
+    c2->use(0, *c2);
+    c2->use(0, *c2);
 
     std::cout << std::endl;
     delete c1;
     delete c2;
-    delete c3; */
+    delete c3;
 
 }
 
@@ -140,15 +140,11 @@ void test_materia()
     delete m1;
     delete m2;
     delete player;
-    delete tmp;
-    delete tmp2;
 }
 
 int main(void)
 {
-    //test_subj();
-    //std::cout << std::endl;
-    test_player();
+    test_subj();
+    //test_player();
     //test_materia();
-    //std::cout << std::endl;
 }

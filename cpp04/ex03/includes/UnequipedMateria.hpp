@@ -13,12 +13,14 @@ class UnequipedMateria {
     private:
         t_UnequipedNodes *unequipedNodes;
         UnequipedMateria();
+        UnequipedMateria(const UnequipedMateria& other);
+        UnequipedMateria& operator==(const UnequipedMateria& other);
 
     public:
         ~UnequipedMateria();
         static UnequipedMateria& getInstance();
         void addMateria(AMateria* m);
-        AMateria* getMateria(std::string& type);
+        AMateria* getMateria(AMateria *target);
 } ;
 
 #endif

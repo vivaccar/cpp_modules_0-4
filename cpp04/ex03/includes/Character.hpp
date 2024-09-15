@@ -22,7 +22,6 @@ class Character : public ICharacter {
         void unequip(int idx);
         void use(int idx, ICharacter& target);
 
-        void getUnequipedMateria(std::string& type);
         bool isFull() const;
 };
 

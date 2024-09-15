@@ -10,11 +10,14 @@
 #define GREEN "\033[32m"
 #define RESET "\033[0m"
 
+#define CREATED 1
+#define EQUIPED 2
+#define UNEQUIPED 3
 
 class AMateria {
     protected:
         std::string _type;
-        bool        _isEquiped;
+        int        _status;
 
     public:
 
@@ -29,8 +32,8 @@ class AMateria {
 
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
-        bool isEquiped() const;
-        void setEquiped(bool status);
+        int getStatus() const;
+        void setStatus(int status);
 };
 
 #endif

@@ -38,17 +38,45 @@ int main (void)
         std::cout << std::endl;
 
         Brain *brain;
+        Brain *brain2 = Animals[0]->getBrain();
         brain = Animals[5]->getBrain();
 
         brain->setIdea(1, "i have no ideas today");
         brain->setIdea(10, "hello world");
 
+        
         std::cout << brain->getIdeas(1) << std::endl;
         std::cout << brain->getIdeas(10) << std::endl;
 
+        brain2 = brain;
+
+        std::cout << "\n\n";
+
+        std::cout << brain2->getIdeas(1) << std::endl;
+        std::cout << brain2->getIdeas(10) << std::endl;
+
         std::cout << std::endl;
-        
+
+/*         Dog *dog = new Dog;
+        Brain *dog_brain = brain;
+        Dog *dog2 = new Dog(*dog);
+        Brain *dog2_brain = dog2->getBrain();
+        std::cout << dog2_brain->getIdeas(1) << std::endl;
+        std::cout << dog2_brain->getIdeas(10) << std::endl;
+
+        std::cout << brain2->getIdeas(1) << std::endl;
+        std::cout << brain2->getIdeas(10) << std::endl;
+        delete dog;
+        delete dog2;
+
+        (void)dog;
+        (void)dog2_brain;
+        (void)dog_brain; */
+
         for (int i = 0; i < size; i++)
             delete Animals[i];
+        
+        
     }
+
 }

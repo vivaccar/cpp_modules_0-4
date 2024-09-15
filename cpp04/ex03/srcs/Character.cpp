@@ -54,21 +54,29 @@ std::string const & Character::getName() const {
 }
 
 void Character::equip(AMateria* m) {
+    UnequipedMateria& Unequiped = UnequipedMateria::getInstance();
+    AMateria *tmp = Unequiped.getMateria(m);
+    
     if (!m)
         return;
-    if (m->isEquiped())
+    if (m->getStatus() == EQUIPED)
     {
         std::cout << "This Materia is already equipped by another Character" << std::endl;
         return ;
     }    
+    
     for (int i = 0; i < 4; i++)
     { 
         if (this->_inventory[i] == NULL)
         {
             this->_inventory[i] = m;
-            std::cout << "Materia " << m->getType() << " equipped for Character " <<
-            this->_name << std::endl;
-            m->setEquiped(true);
+            if (tmp)
+                std::cout << "Materia " << m->getType() << " taken from the UniquepedMaterias, equiped for Character " <<
+                this->_name << std::endl;
+            else
+                std::cout << "Materia " << m->getType() << " equipped for Character " <<
+                this->_name << std::endl;
+            m->setStatus(EQUIPED);
             return ;
         }
     }
@@ -115,26 +123,5 @@ bool Character::isFull() const {
     return true;
 }
 
-void Character::getUnequipedMateria(std::string& type) {
-    UnequipedMateria& Unequiped = UnequipedMateria::getInstance();
-
-    if (this->isFull())
-    {
-        std::cout << "[" << this->_name << "] inventory is full" << std::endl;
-        return;
-    }
-    for (int i = 0; i < 4; i++)
-    {
-        if (this->_inventory[i])
-        {
-            this->_inventory[i] = Unequiped.getMateria(type);
-            if (this->_inventory[i])
-                std::cout << "Character " << this->_name << " got " << type << " from unequiped materias" << std::endl;
-            else
-                std::cout << "There is no " << type << " available in the unequiped materias" << std::endl;
-            return;
-        }
-    }
-}
 
 
