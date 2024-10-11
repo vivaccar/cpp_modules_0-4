@@ -1,4 +1,4 @@
-# C++ Module 02 Summary
+# C++ Module 02
 
 ## Concepts Learned
 
