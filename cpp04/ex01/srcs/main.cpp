@@ -5,12 +5,11 @@ int main (void)
 {
     {
         std::cout << ":::::::: SUBJECT TEST ::::::::" << std::endl;
-        
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
-        delete j;//should not create a leak
-        delete i;
 
+        Cat a;
+        Cat b;
+
+        a = b;
         //return 0;
     }
 
@@ -57,7 +56,7 @@ int main (void)
 
         std::cout << std::endl;
 
-/*         Dog *dog = new Dog;
+        Dog *dog = new Dog;
         Brain *dog_brain = brain;
         Dog *dog2 = new Dog(*dog);
         Brain *dog2_brain = dog2->getBrain();
@@ -71,7 +70,7 @@ int main (void)
 
         (void)dog;
         (void)dog2_brain;
-        (void)dog_brain; */
+        (void)dog_brain;
 
         for (int i = 0; i < size; i++)
             delete Animals[i];

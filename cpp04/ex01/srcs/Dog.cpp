@@ -20,6 +20,7 @@ Dog& Dog::operator=(const Dog& other) {
     Brain *other_brain = other.getBrain();
     
     this->_type = other._type;
+    delete this->brain;
     this->brain = new Brain(*other_brain);
     return (*this);
 }
